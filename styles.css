@@ -1,0 +1,117 @@
+/* Root colors for consistency */
+:root {
+  --bg-color: #090F19;
+  --active-button: #080E17;
+  --text-color: #92a1ba;
+  --link-color: #79acd9;
+  --border-color: #284370;
+  --link-not-active: #9dafc6;
+  --div-background: #080E17;
+  --text-area: #b9a3b7;
+  --heading-color: #ec9a34;
+  --pseudo-bg-gradient-start: rgba(9, 15, 25, 0);
+  --pseudo-bg-gradient-end: #090F19;
+}
+
+/* Body background */
+html,
+body,
+:not([style*="background-color:"]) {
+  background-color: var(--bg-color) !important;
+}
+
+html,
+body,
+:not([style*="color:"]),
+.sr-reader *:not([class*='sr-pivot']) {
+   color: var(--text-color) !important;
+}
+
+h1:not([style*="color:"]),
+h2:not([style*="color:"]),
+h3:not([style*="color:"]),
+h4:not([style*="color:"]),
+h5:not([style*="color:"]),
+h6:not([style*="color:"]) {
+  color: var(--heading-color) !important;
+}
+
+input:not([style*="background-color:"]),
+textarea:not([style*="background-color:"]),
+button:not([style*="background-color:"]),
+[role="button"] {
+   background-color: var(--bg-color) !important;
+}
+
+input:not([style*="background-color:"]):active,
+input:not([style*="background-color:"]):focus,
+input:not([style*="background-color:"]):hover,
+textarea:not([style*="background-color:"]):active,
+textarea:not([style*="background-color:"]):focus,
+textarea:not([style*="background-color:"]):hover,
+button:not([style*="background-color:"]):active,
+button:not([style*="background-color:"]):focus,
+button:not([style*="background-color:"]):hover,
+[role="button"]:active,
+[role="button"]:focus,
+[role="button"]:hover {
+   background-color: var(--active-button) !important;
+}
+
+a:not([style*="color:"]) {
+    color: var(--link-not-active) !important;
+}
+a:not([style*="color:"]):hover {
+   color: var(--link-color) !important;
+}
+a:not([style*="color:"]):active, a:not([style*="color:"]):focus {
+   color: var(--link-color) !important;
+}
+
+:not([style*="border-color:"]),
+::before,
+::after {
+    border-color: var(--border-color) !important;
+}
+
+/* *::after, *::before { */
+/*   content: none !important; */
+/*   display: none !important; */
+/* } */
+
+div:empty,
+.sr-reader *,
+.sr-backdrop {
+    background-color: var(--div-background) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-area) !important;
+}
+input:not([style*="background-image:"]),
+textarea:not([style*="background-image:"]) {
+    background-image: none !important;
+}
+
+/* Tables */
+table {
+  background-color: var(--bg-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+td, th {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+img:not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".gif"]) {
+  filter: invert(100%);
+  background-color: transparent !important;
+  padding: 3px;
+  border-radius: 2px;
+}
+
+img[src*=".jpg"], img[src*=".jpeg"], img[src*=".gif"] {
+  box-shadow: 0 0 0 1px var(--text-color);
+}
